@@ -17,7 +17,6 @@ ul,li{
 
 body{
     background: #F4F5F9;
-    overflow: hidden;
     position: relative;
 }
 .rt{
@@ -26,20 +25,61 @@ body{
 /*Í·²¿*/
 
 #header{
-    width:1130px;
+    width:1113px;
     height:50px;
     background: #fff;
     line-height: 50px;
     padding:0 50px 0 30px;
 }
-
-
+.welcome a>i{
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 3px solid black;
+    position: absolute;
+    top:25px;
+    left:1289px;
+}
+.welcome a{
+    background: #F6F6F7;
+    padding:2px 12px;
+    border-radius: 5px;
+}
+.config{
+    position: absolute;
+    top:40px;
+    left:1198px;
+    z-index: 10;
+    background: #fff;
+    border:1px solid #E0E0E1;
+}
+.config>li{
+    border-bottom:1px solid #E0E0E1;
+    padding:5px 10px;
+    height:38px;
+    width:100px;
+    line-height: 2em;
+}
+.config>li.active{
+    background: #F6F6F7;
+}
+.config>li:nth-child(2)>i{
+    width:20px;
+    height:20px;
+    display: inline-block;
+    background: url('../img/images.png') no-repeat -10px -160px;
+}
+.config>li:nth-child(3)>i{
+    width:20px;
+    height:20px;
+    display: inline-block;
+    background: url('../img/images.png') no-repeat -10px -180px;
+}
 
 /*×ó²à*/
 #lf_side{
     width:236px;
     background: #172224;
-    min-height: 670px;
+    min-height: 710px;
 }
 
 .three>li>a{
@@ -170,7 +210,33 @@ body{
     display: inline-block;
     background: url('../img/images.png') no-repeat -10px -100px;
 }
+ dt{
+     color:#224567;
+ }
+.bottom{
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top:30px;
+}
+
 .pages{
     display: flex;
     flex-flow: row nowrap;
+    margin-left:510px;
+}
+.pages a{
+    margin-right:10px;
+    color:#262626;
+}
+.pages_jump{
+    margin-left:50px;
+}
+.pages_jump input{
+    width:50px;
+}
+.pages_jump button{
+    background:#07B0EF ;
+    border: none;
+    color:#fff;
+    padding:2px 13px;
 }
