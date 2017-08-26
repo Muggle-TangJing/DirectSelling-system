@@ -3,12 +3,45 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>其他关注信息</title>
+
+
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <style>
         #tbl td:nth-child(5){
             color:#07B0EF;
         }
+        .three ul>li{
+            padding:10px 0;
+        }
+        .three ul{
+            margin:10px 0;
+        }
+        #add{
+            height: 200px;
+            width:520px;
+            margin-bottom:60px;
+        }
+       .cancle{
+            width:50%;
+            height:50px;
+            background: #DADADA;
+            border:none;
+            position: absolute;
+            bottom:0;
+            left:0;
+        }
+        .ok{
+            width:50%;
+            height:50px;
+            background: #0090C8;
+            border:none;
+            color:#fff;
+            position: absolute;
+            bottom:0;
+            left:50%;
+        }
     </style>
-    <link rel="stylesheet" href="css/main.css"/>
 </head>
 <body>
 <header id="header" class="rt">
@@ -23,9 +56,9 @@
                 </ul>
             </span>
 </header>
-<div id="lf_side">
+<div id="lf_side" style="height:882px;">
     <div style="width:236px;height:50px;background: #4579AD;font-size:35px;">logo</div>
-    <ul class="three" style="padding-top:15px;">
+    <ul class="three" style="padding-top:15px;margin-left: 0;">
         <li>
             <a>
                 <b></b>
@@ -142,7 +175,21 @@
             <li>安利</li>
             <li>完美</li>
             <li>常青</li>
-            <li><b>+</b>添加</li>
+            <li>
+                <button style="border: none;background: none;" data-toggle="modal" data-target="#myModal">+添加</button>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                    <input type="text" id="add" placeholder="请添加直销企业 多个企业请用空格隔开"/>
+
+                                <button data-dismiss="modal" class="cancle">取消</button>
+                                <button class="ok">确定</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
         </ul>
     </div>
     <div class="top">
@@ -160,8 +207,8 @@
             <option value="10">中华网</option>
             <option value="11">国际在线</option>
         </select>
-        <input type="text" placeholder="请输入关键字"/>
-        <input type="button" value="确定" class="confirm"/>
+        <input type="text" placeholder="请输入关键字" style="height: 30px;"/>
+        <input type="button" value="确定" class="confirm" style="height: 30px;position: relative;top:-5px;"/>
         <ul class="rt">
             <li>时间</li>
             <li>相关度</li>
@@ -280,10 +327,14 @@
         </ul>
             <span class="pages_jump">
                 <input type="text"/>
-                <button>跳转</button>
+                <button style="position: absolute;top:784px;right:0;">跳转</button>
             </span>
 
     </div>
 </div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>
