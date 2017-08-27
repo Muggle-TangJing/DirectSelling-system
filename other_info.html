@@ -3,43 +3,10 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>其他关注信息</title>
-
-
     <link rel="stylesheet" href="css/main.css"/>
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <style>
         #tbl td:nth-child(5){
             color:#07B0EF;
-        }
-        .three ul>li{
-            padding:10px 0;
-        }
-        .three ul{
-            margin:10px 0;
-        }
-        #add{
-            height: 200px;
-            width:520px;
-            margin-bottom:60px;
-        }
-       .cancle{
-            width:50%;
-            height:50px;
-            background: #DADADA;
-            border:none;
-            position: absolute;
-            bottom:0;
-            left:0;
-        }
-        .ok{
-            width:50%;
-            height:50px;
-            background: #0090C8;
-            border:none;
-            color:#fff;
-            position: absolute;
-            bottom:0;
-            left:50%;
         }
     </style>
 </head>
@@ -176,19 +143,15 @@
             <li>完美</li>
             <li>常青</li>
             <li>
-                <button style="border: none;background: none;" data-toggle="modal" data-target="#myModal">+添加</button>
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                    <input type="text" id="add" placeholder="请添加直销企业 多个企业请用空格隔开"/>
-
-                                <button data-dismiss="modal" class="cancle">取消</button>
-                                <button class="ok">确定</button>
-                            </div>
-                        </div>
+                <button id="add_btn" style="border: none;background: none;" >+添加</button>
+                <div class="modal">
+                    <div id="add_blank">
+                        <textarea name="add" style="height:200px;width:400px;" id="add" placeholder="请添加直销企业 多个企业请用空格隔开"></textarea>
+                        <button  class="cancle">取消</button>
+                        <button class="ok">确定</button>
                     </div>
                 </div>
+
             </li>
         </ul>
     </div>
@@ -334,7 +297,20 @@
 </div>
 
 <script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
+<script src="js/main.js"></script>
+<script>
+    $('#add_btn').click(function(){
+        $(this).siblings('.modal').css('display','block')
+    })
+    $('.modal').click(function(e){
+        var target = e.target;
+        if(target.className == 'modal'){
+            $(this).css('display','none')
+        }
+    })
+    $('.cancle').click(function(){
+        $(this).parent().parent().css('display','none')
+    })
+</script>
 </body>
 </html>
